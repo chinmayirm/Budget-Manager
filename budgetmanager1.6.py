@@ -1,7 +1,6 @@
 from tkinter import *
 import customtkinter
-# hi my name is rachit i am making a pull request
-customtkinter.set_default_color_theme("dark-blue")  
+customtkinter.set_appearance_mode("dark")  
 
 
 
