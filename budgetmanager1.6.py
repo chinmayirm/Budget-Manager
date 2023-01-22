@@ -22,8 +22,6 @@ label = customtkinter.CTkLabel(frame1, text="BUDGET MANAGER",
                                font=('Helvetica', 34), text_color='white'
                                )
 label.place(relx=0.5, rely=0.5,anchor=customtkinter.CENTER)
-
-
 #FRAME2
 frame2=customtkinter.CTkFrame(master=root,width=400,height=50,corner_radius=10)
 frame2.grid(row=1,column=0,padx=20,pady=10)
@@ -74,24 +72,24 @@ def func1():
     whb.geometry('440x220+0+253')
     
     
-    listhb1=["rent", "maintenance","insurance","car","electricity","water","phone","internet","additional"]
+    listhb1=["Rent", "Maintenance","Insurance","Car","Electricity","Water","Phone","Internet","Additional"]
     count=0
     listhb2=[]
     for i in range(len(listhb1)):
             a=customtkinter.CTkLabel(whb,text=listhb1[i]).grid(row=count,column=0)
-            b=customtkinter.CTkEntry(whb,width=50)
+            b=customtkinter.CTkEntry(whb,width=60,height=20)
             b.grid(row=count,column=1,columnspan=2)
             listhb2.append(b)
             count+=1
-    sum_hb=customtkinter.CTkLabel(whb,text="total: 0000000 " ,padx=30).grid(row=count,column=2)
+    sumhb=customtkinter.CTkLabel(whb,text="TOTAL: 0000000 " ,padx=30).grid(row=count,column=2)
     def sumhousehold():
             sumhb=0
             for b in listhb2:
                 d=b.get()
                 sumhb+=int(d)
-            dictexp.update({"household bills":sumhb})
-            l=customtkinter.CTkLabel(whb,text="total: " +str(sumhb),padx=30).grid(row=count,column=2)
-    b_totalhousehold=customtkinter.CTkButton(whb,text="submit",command=sumhousehold,padx=40,bg="#A8F847")
+            dictexp.update({"Household Bills":sumhb})
+            l=customtkinter.CTkLabel(whb,text="TOTAL: " +str(sumhb),padx=30).grid(row=count,column=2)
+    b_totalhousehold=customtkinter.CTkButton(whb,text="submit",command=sumhousehold,padx=40,pady=10)
     b_totalhousehold.grid(row=count,column=1)
     
     
@@ -102,16 +100,16 @@ def func1():
 def func2():
     wlc=customtkinter.CTkToplevel()
     wlc.geometry('440x220+0+253')
-    listlc1=["groceries","laundry","clothes","toiletries","health","medicines","heathcare","domestic_help","additional"]
+    listlc1=["Groceries","Laundry","Clothes","Toiletries","Health","Medicines","Heathcare","Domestic Help","Additional"]
     count=0
     listlc2=[]
     for i in range(len(listlc1)):
             a=customtkinter.CTkLabel(wlc,text=listlc1[i]).grid(row=count,column=0)
-            b=customtkinter.CTkEntry(wlc,width=50)
+            b=customtkinter.CTkEntry(wlc,width=60,height=20)
             b.grid(row=count,column=1,columnspan=2)
             listlc2.append(b)
             count+=1
-    sum_lc=customtkinter.CTkLabel(wlc,text="total: 0000000 " ,padx=30).grid(row=count,column=2)
+    sum_lc=customtkinter.CTkLabel(wlc,text="TOTAL: 0000000 " ,padx=30).grid(row=count,column=2)
     
     def sumlivingcost():
             sumlc=0
@@ -119,7 +117,7 @@ def func2():
                 d=b.get()
                 sumlc+=int(d)
             dictexp.update({"living costs":sumlc})
-            l=customtkinter.CTkLabel(wlc,text="total: " +str(sumlc),padx=30).grid(row=count,column=2)
+            l=customtkinter.CTkLabel(wlc,text="TOTAL: " +str(sumlc),padx=30).grid(row=count,column=2)
     b_totallivingcost=customtkinter.CTkButton(wlc,text="submit",command=sumlivingcost,padx=40,bg="#A8F847")
     b_totallivingcost.grid(row=count,column=1)
     
@@ -128,25 +126,25 @@ def func2():
 def func3():
     wbk=customtkinter.CTkToplevel()
     wbk.geometry('440x220+0+253')
-    listbk1=["bank_account_fees","loan","credit_card_payment","additional"]
+    listbk1=["Bank Account Fees","Loan","Credit Card Payment","Additional"]
     count=0
     listbk2=[]
     for i in range(len(listbk1)):
             a=customtkinter.CTkLabel(wbk,text=listbk1[i]).grid(row=count,column=0)
-            b=customtkinter.CTkEntry(wbk,width=50)
+            b=customtkinter.CTkEntry(wbk,width=60,height=20)
             b.grid(row=count,column=1,columnspan=2)
             listbk2.append(b)
             count+=1
 
 
-    sum_lc=customtkinter.CTkLabel(wbk,text="total: 0000000 " ,padx=30).grid(row=count,column=2)
+    sum_lc=customtkinter.CTkLabel(wbk,text="TOTAL: 0000000 " ,padx=30).grid(row=count,column=2)
     def sumbank():
             sumbk=0
             for b in listbk2:
                 d=b.get()
                 sumbk+=int(d)
             dictexp.update({"banking":sumbk})
-            l=customtkinter.CTkLabel(wbk,text="total: " +str(sumbk),padx=30).grid(row=count,column=2)
+            l=customtkinter.CTkLabel(wbk,text="TOTAL: " +str(sumbk),padx=30).grid(row=count,column=2)
     b_totalbank=customtkinter.CTkButton(wbk,text="submit",command=sumbank,padx=40,bg="#A8F847")
     b_totalbank.grid(row=count,column=1)
     
@@ -155,26 +153,26 @@ def func3():
 def func4():
     wch=customtkinter.CTkToplevel()
     wch.geometry('440x220+0+253')
-    listch1=["childcare","school_fees","club_activities","toy","babysitting","vet","pet_insurance","additional"]
+    listch1=["Childcare","School Fees","Club Activities","Toys","Babysitting","Vet","Pet Insurance","Additional"]
     count=0
     listch2=[]
    
     for i in range(len(listch1)):
             a=customtkinter.CTkLabel(wch,text=listch1[i]).grid(row=count,column=0)
-            b=customtkinter.CTkEntry(wch,width=50)
+            b=customtkinter.CTkEntry(wch,width=60,height=20)
             b.grid(row=count,column=1,columnspan=2)
             listch2.append(b)
             count+=1
 
 
-    sum_ch=customtkinter.CTkLabel(wch,text="total: 0000000 " ,padx=30).grid(row=count,column=2)
+    sum_ch=customtkinter.CTkLabel(wch,text="TOTAL: 0000000 " ,padx=30).grid(row=count,column=2)
     def sumchild():
             sumch=0
             for b in listch2:
                 d=b.get()
                 sumch+=int(d)
             dictexp.update({"children & pets":sumch})
-            l=customtkinter.CTkLabel(wch,text="total: " +str(sumch),padx=30).grid(row=count,column=2)
+            l=customtkinter.CTkLabel(wch,text="TOTAL: " +str(sumch),padx=30).grid(row=count,column=2)
     b_totalchild=customtkinter.CTkButton(wch,text="submit",command=sumchild,padx=40,bg="#A8F847")
     b_totalchild.grid(row=count,column=1)
     
@@ -184,23 +182,23 @@ def func4():
 def func5():
     wli=customtkinter.CTkToplevel()
     wli.geometry('440x220+0+253')
-    listli1=["hobbies","day_outs","cinema","books_and_games","newsletter","birthdays","festive_spending","holidays"]
+    listli1=["Hobbies","Day Outs","Cinema","Books and Games","Newsletter","Birthdays","Festive Spending","Holidays"]
     count=0
     listli2=[]
     for i in range(len(listli1)):
             a=customtkinter.CTkLabel(wli,text=listli1[i]).grid(row=count,column=0)
-            b=customtkinter.CTkEntry(wli,width=50)
+            b=customtkinter.CTkEntry(wli,width=60,height=20)
             b.grid(row=count,column=1,columnspan=2)
             listli2.append(b)
             count+=1
-    sum_ch=customtkinter.CTkLabel(wli,text="total: 0000000 " ,padx=30).grid(row=count,column=2)
+    sum_ch=customtkinter.CTkLabel(wli,text="TOTAL: 0000000 " ,padx=30).grid(row=count,column=2)
     def sumliesure():
             sumli=0
             for b in listli2:
                 d=b.get()
                 sumli+=int(d)
             dictexp.update({"leisure spending":sumli})
-            l=customtkinter.CTkLabel(wli,text="total: " +str(sumli),padx=30).grid(row=count,column=2)
+            l=customtkinter.CTkLabel(wli,text="TOTAL: " +str(sumli),padx=30).grid(row=count,column=2)
     b_totalliesure=customtkinter.CTkButton(wli,text="submit",command=sumliesure,padx=40)
     b_totalliesure.grid(row=count,column=2)
     
@@ -258,8 +256,4 @@ savesubmit.grid(row=4,column=1,pady=20,padx=20)
 
 
 root.mainloop()
-
-
-
-
 
