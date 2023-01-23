@@ -262,10 +262,6 @@ import pandas as pd
 import matplotlib.pyplot as plt
 def pie():
     rep=customtkinter.CTkToplevel()
-    return rep 
-    
-
-def idk():
     groupnames = ['Household Bills', 'Living Costs', 'Banking', 'Children & Pets', 'Leisure Spending']
     counts = pd.Series([dictexp['Household Bills'], dictexp['Living Costs'], dictexp['Banking'], dictexp['Children & Pets'],dictexp['Leisure Spending'], 168], 
                    index=['Household Bills', 'Living Costs', 'Banking', 'Children & Pets', 'Leisure Spending'])
@@ -279,9 +275,6 @@ def idk():
     plt.show()
 
 result=customtkinter.CTkButton(frame5,text="VIEW REPORT",command=pie)
-result1=customtkinter.CTkButton(rep,text="VIEW REPORT",command=idk)
-
-
 result.grid (row=0,column=0)
 
 
