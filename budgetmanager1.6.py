@@ -263,11 +263,10 @@ import matplotlib.pyplot as plt
 def pie():
     rep=customtkinter.CTkToplevel()
     groupnames = ['Household Bills', 'Living Costs', 'Banking', 'Children & Pets', 'Leisure Spending']
-    counts = pd.Series([dictexp['Household Bills'], dictexp['Living Costs'], dictexp['Banking'], dictexp['Children & Pets'],dictexp['Leisure Spending'], 168], 
+    counts = pd.Series([dictexp['Household Bills'], dictexp['Living Costs'], dictexp['Banking'], dictexp['Children & Pets'],dictexp['Leisure Spending']], 
                    index=['Household Bills', 'Living Costs', 'Banking', 'Children & Pets', 'Leisure Spending'])
     explode = (0, 0, 0, 0, 0)
-    colors = ['#191970', '#001CF0', '#0038E2', '#0055D4', '#0071C6', '#008DB8', '#00AAAA',
-          '#00C69C', '#00E28E', '#00FF80', ]
+    colors = ['#191970', '#001CF0', '#0038E2', '#0055D4', '#0071C6']
     counts.plot(kind='pie', fontsize=17, colors=colors, explode=explode)
     plt.axis('equal')
     plt.ylabel('')
