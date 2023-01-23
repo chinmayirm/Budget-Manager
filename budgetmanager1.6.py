@@ -56,10 +56,13 @@ b_totalrevenue.grid(row=5,column=1,pady=20,padx=20)
 #FRAME3
 
 frame3=customtkinter.CTkFrame(master=root,width=900,height=200,corner_radius=10)
-frame3.grid(row=2,column=0,padx=20,pady=20)
-label2=customtkinter.CTkLabel(frame3,text="EXPENDITURE",font=('Helvetica',20),text_color='#00BFFF',padx=180).grid(row=0,column=0,columnspan=5,pady=20,padx=20)
-
-
+frame3.grid(row=2,column=0,padx=10,pady=10)
+label2=customtkinter.CTkLabel(frame3,text="EXPENDITURE",font=('Helvetica',20),text_color='#00BFFF',padx=180).grid(row=0,column=0,columnspan=5,pady=10,padx=10)
+'''
+1
+1
+1
+'''
 dictexp={"Household Bills":0,"Living Costs":0,"Banking":0,"Children & Pets":0,"Leisure Spending":0}
 
 
@@ -216,9 +219,9 @@ b_liesure.grid(row=1,column=4,pady= 20, padx= 20)
 
 #FRAME4
 frame4=customtkinter.CTkFrame(master=root,width=900,height=200,corner_radius=10)
-frame4.grid(row=3,column=0,padx=20,pady=20)
+frame4.grid(row=3,column=0,padx=10,pady=20)
 
-label4=customtkinter.CTkLabel(frame4,text="SAVINGS",font=('Helvetica',20),text_color='#00BFFF',padx=160,corner_radius=10).grid(row=0,column=0,columnspan=6,pady=20,padx=20)
+label4=customtkinter.CTkLabel(frame4,text="SAVINGS",font=('Helvetica',20),text_color='#00BFFF',padx=160,corner_radius=10).grid(row=0,column=0,columnspan=6,pady=10,padx=10)
 
 
 lista=["Goal"] 
@@ -247,6 +250,39 @@ savesubmit=customtkinter.CTkButton(frame4,text="SUBMIT",command=savings)
 savesubmit.grid(row=4,column=1,pady=20,padx=20)
 
 
+
+#NAMITA 
+
+frame5=customtkinter.CTkFrame(master=root,width=200,height=50,corner_radius=10)
+frame5.grid(row=4,column=0,padx=20,pady=20)
+
+import matplotlib
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+def pie():
+    rep=customtkinter.CTkToplevel()
+    return rep 
+    
+
+def idk():
+    groupnames = ['Household Bills', 'Living Costs', 'Banking', 'Children & Pets', 'Leisure Spending']
+    counts = pd.Series([dictexp['Household Bills'], dictexp['Living Costs'], dictexp['Banking'], dictexp['Children & Pets'],dictexp['Leisure Spending'], 168], 
+                   index=['Household Bills', 'Living Costs', 'Banking', 'Children & Pets', 'Leisure Spending'])
+    explode = (0, 0, 0, 0, 0)
+    colors = ['#191970', '#001CF0', '#0038E2', '#0055D4', '#0071C6', '#008DB8', '#00AAAA',
+          '#00C69C', '#00E28E', '#00FF80', ]
+    counts.plot(kind='pie', fontsize=17, colors=colors, explode=explode)
+    plt.axis('equal')
+    plt.ylabel('')
+    plt.legend(labels=counts.index, loc="best")
+    plt.show()
+
+result=customtkinter.CTkButton(frame5,text="VIEW REPORT",command=pie)
+result1=customtkinter.CTkButton(rep,text="VIEW REPORT",command=idk)
+
+
+result.grid (row=0,column=0)
 
 
 
