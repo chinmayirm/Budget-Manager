@@ -2,8 +2,12 @@
 
 Since the classic method of writing down transactions can be time consuming and hectic, using a lightweight python-based application will help the user monitor their personal finance transactions in a much more efficient and quick manner.
 
+
+
 ## AIM
 Basic python program to create a finance and budget manager to stimulate money management.
+
+
 
 ## INPUT
 - Creating a log-in ID.
@@ -37,12 +41,16 @@ Basic python program to create a finance and budget manager to stimulate money m
       4. Children & Pets
       5. Indulgents and Leisure Spending
   - Savings and goals
+  
+  
 
 
 ## OUTPUT
 - Pie chart breakdown of Total Expenditure into Household Bills, Living Costs, Bank, Children & Pets and Leisure Spending.
 - Clear analysis of areas that contributed to most of the expenditure.
 - Percentage analysis of how close the user was in acheiving their saving goal of the month.
+
+
 
 
 ## MODULES USED
